@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private void settingData() {
         countryArrayList = new ArrayList<>();
 
-        countryArrayList.add(new AsiaCountry(R.mipmap.vietnam, "Vietnam", "Việt "));
+        countryArrayList.add(new AsiaCountry(R.mipmap.vietnam, "Vietnam", "Việt Nam"));
         countryArrayList.add(new AsiaCountry(R.mipmap.afghanistan, "Afghanistan", "Áp-ga-nix-tan"));
         countryArrayList.add(new AsiaCountry(R.mipmap.brunei, "Brunei", "Bru-nây"));
         countryArrayList.add(new AsiaCountry(R.mipmap.cambodia, "Cambodia", "Cam-pu-chia"));

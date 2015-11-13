@@ -1,6 +1,7 @@
 package devexchanges.info.gridviewistview;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +43,35 @@ public class AbsListViewAdapter extends ArrayAdapter<AsiaCountry> {
         holder.flag.setImageResource(getItem(position).getFlagResource());
         holder.countryName.setText(getItem(position).getName());
 
+        convertView.setOnClickListener(onClickListener(getItem(position), String.valueOf(position + 1)));
+
         return convertView;
+    }
+
+    private View.OnClickListener onClickListener(final AsiaCountry country, String position) {
+        return new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                final Dialog dialog = new Dialog(activity);
+                dialog.setContentView(R.layout.layout_dialog);
+                dialog.setTitle("Selected Country");
+
+                TextView name = (TextView) dialog.findViewById(R.id.country_name);
+                TextView position = (TextView) dialog.findViewById(R.id.pos);
+                TextView viName = (TextView) dialog.findViewById(R.id.vi_name);
+                ImageView image = (ImageView) dialog.findViewById(R.id.image);
+
+                name.setText(country.getName());
+                viName.setText(country.getVietnameseName());
+                position.setText((CharSequence) position);
+
+                image.setImageResource(country.getFlagResource());
+
+
+                dialog.show();
+            }
+        };
     }
 
     private static class ViewHolder {
