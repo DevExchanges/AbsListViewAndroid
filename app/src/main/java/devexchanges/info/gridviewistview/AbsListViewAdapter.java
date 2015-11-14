@@ -65,9 +65,7 @@ public class AbsListViewAdapter extends ArrayAdapter<AsiaCountry> {
                 name.setText(country.getName());
                 viName.setText(country.getVietnameseName());
                 position.setText(pos);
-
                 image.setImageResource(country.getFlagResource());
-
 
                 dialog.show();
             }
