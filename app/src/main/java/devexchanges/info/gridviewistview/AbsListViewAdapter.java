@@ -48,7 +48,7 @@ public class AbsListViewAdapter extends ArrayAdapter<AsiaCountry> {
         return convertView;
     }
 
-    private View.OnClickListener onClickListener(final AsiaCountry country, String position) {
+    private View.OnClickListener onClickListener(final AsiaCountry country, final String pos) {
         return new View.OnClickListener() {
 
             @Override
@@ -64,7 +64,7 @@ public class AbsListViewAdapter extends ArrayAdapter<AsiaCountry> {
 
                 name.setText(country.getName());
                 viName.setText(country.getVietnameseName());
-                position.setText((CharSequence) position);
+                position.setText(pos);
 
                 image.setImageResource(country.getFlagResource());
 

@@ -2,5 +2,5 @@
     <string name="app_name">Some Asia Countries</string>
     <string name="country_name">Country Name</string>
     <string name="vi_name">Vietnamese Name</string>
-    <string name="position">Position</string>
+    <string name="position">Position In List</string>
 </resources>
